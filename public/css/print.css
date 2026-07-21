@@ -1,0 +1,54 @@
+/* ====================================================
+   public/css/print.css  –  Print-ready layout
+   ==================================================== */
+
+@media print {
+    /* Hide all chrome */
+    #sidebar,
+    #sidebarCollapse,
+    .top-navbar,
+    .d-print-none,
+    .btn,
+    .alert,
+    .modal,
+    .pagination,
+    .nav-tabs,
+    .card-footer,
+    .dropdown {
+        display: none !important;
+    }
+
+    /* Reset layout to full width */
+    #wrapper { display: block !important; }
+    #content  { width: 100% !important; min-height: unset !important; }
+    main      { padding: 0 !important; }
+    body      { background: #fff !important; color: #000 !important; font-size: 11pt; }
+
+    /* Cards printed borderless */
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+
+    /* Tables */
+    table { width: 100% !important; font-size: 10pt; }
+    thead { background-color: #f0f0f0 !important; print-color-adjust: exact; }
+    th, td { padding: 6px 8px !important; border: 1px solid #ccc !important; }
+
+    /* Badges and status rendered in print */
+    .badge-status,
+    .badge { border: 1px solid #999 !important; print-color-adjust: exact; }
+
+    /* Force page breaks */
+    .page-break-after  { page-break-after: always; }
+    .page-break-before { page-break-before: always; }
+
+    /* Hide non-essential columns (action buttons) */
+    th:last-child, td:last-child { display: none !important; }
+
+    /* Print header branding stays */
+    .print-header { display: block !important; }
+
+    a { text-decoration: none; color: inherit; }
+}

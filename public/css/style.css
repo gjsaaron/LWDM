@@ -1,0 +1,185 @@
+/* public/css/style.css */
+
+:root {
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #e0f2fe;
+  --secondary: #0f172a;
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-sidebar: #0f172a;
+  --sidebar-text: #94a3b8;
+  --sidebar-active: #ffffff;
+  --sidebar-hover-bg: #1e293b;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Layout */
+#wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 260px;
+  max-width: 260px;
+  background-color: var(--bg-sidebar);
+  color: #fff;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+  z-index: 1000;
+}
+
+#sidebar .sidebar-header {
+  padding: 1.25rem 1.5rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#sidebar .sidebar-header small {
+  color: #ffffff !important;
+}
+
+#sidebar .sidebar-heading {
+  color: #ffffff !important;
+}
+
+#sidebar ul.components {
+  padding: 1rem 0;
+}
+
+#sidebar ul li a {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.925rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#sidebar ul li a:hover, #sidebar ul li.active > a {
+  color: var(--sidebar-active);
+  background: var(--sidebar-hover-bg);
+  border-left: 4px solid var(--primary);
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.top-navbar {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1.5rem;
+}
+
+/* Metric Cards */
+.card-metric {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-metric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.metric-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Data Tables */
+.table-custom {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.table-custom th {
+  background-color: var(--bg-body);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1rem;
+}
+
+.table-custom td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+/* Status Badges */
+.badge-status {
+  padding: 0.35em 0.75em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50rem;
+}
+
+.badge-active { background-color: #dcfce7; color: #15803d; }
+.badge-inactive { background-color: #f3f4f6; color: #4b5563; }
+.badge-unpaid { background-color: #fef3c7; color: #b45309; }
+.badge-paid { background-color: #d1fae5; color: #047857; }
+.badge-overdue { background-color: #fee2e2; color: #b91c1c; }
+.badge-disconnected { background-color: #f3f4f6; color: #4b5563; }
+.badge-partially { background-color: #e0e7ff; color: #4338ca; }
+.badge-partially-paid { background-color: #e0e7ff; color: #4338ca; }
+
+/* Custom Buttons */
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  transition: background 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+/* Anomaly highlight */
+.anomaly-row {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
